@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -7,14 +8,14 @@
   <style>
     * {
       box-sizing: border-box;
-      margin: 1;
-      padding: 2;
+      margin: 0;
+      padding: 0;
     }
 
     body {
       font-family: system-ui, -apple-system, sans-serif;
-      background-color: #f8fafc;
-      color: #334155;
+      background-color: #e467a1;
+      color: #4e3a3a;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -24,9 +25,9 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background-color: #fadadd;
-      color: #ffffff;
-      padding: 16px 24px;
+      background-color: #eee1e2;
+      color: #000000;
+      padding: 20px;
       text-align: center;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
@@ -35,32 +36,30 @@
       position: sticky;
       bottom: 0;
       z-index: 100;
-      background-color: #fadadd;
-      color: #94a3b8;
-      padding: 12px 24px;
+      background-color: #eee1e2;
+      color: #000000;
+      padding: 10px;
       text-align: center;
-      font-size: 0.85rem;
       box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
     }
 
     main {
       flex: 1;
-      padding: 24px 16px;
+      padding: 15px 3%;
     }
 
     .flex-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 55px;
+      gap: 10px;
       max-width: 1200px;
       margin: 0 auto;
     }
 
     .card {
-      flex: 0 1 260px;
-      background-color: #c8e5eb;
-      border: 1px solid #e2e8f0;
+      background-color: #ebc8d8;
+      border: 1px solid #ebc8d8;
       border-radius: 8px;
       overflow: hidden;
       display: flex;
@@ -69,25 +68,50 @@
       transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
 
+    .landscape {
+      grid-column: span 6;
+      grid-row: span 5;
+    }
+
+    .besar {
+      grid-column: span 3;
+      grid-row: span 9;
+    }
+
+    .sedang {
+      grid-column: span 3;
+      grid-row: span 7;
+    }
+
+    .kecil {
+      grid-column: span 3;
+      grid-row: span 6;
+    }
+
     .card:hover {
-      transform: translateY(-4px) scale(1.03);
-      border-color: rgba(249, 115, 22, 0.4);
-      box-shadow: 0 10px 24px rgba(249, 115, 22, 0.18), 0 0 14px rgba(251, 146, 60, 0.28);
+      transform: translateY(-4px) scale(1.02);
+      border-color: rgba(12, 46, 235, 0.4);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18), 0 0 14px rgba(251, 146, 60, 0.28);
     }
 
     .card img {
       width: 100%;
-      height: 180px;
+      flex: 1;
+      min-height: 0;
       object-fit: cover;
       display: block;
     }
 
-    .card p {
-      padding: 12px 14px;
-      font-size: 0.85rem;
-      line-height: 1.4;
-      color: #475569;
+    .card .judul {
+      color: #270664;
+      padding: 12px;
     }
+
+    .card .penjelasan {
+      color: #000000;
+      padding: 10px 12px;
+    }
+
   </style>
 </head>
 <body>
@@ -98,25 +122,72 @@
 
   <main>
     <div class="flex-container">
-      <div class="card">
-        <img src="foto/beruang.jpeg" alt="Tugas Menggambar Tekstur Bulu">
-        <p>Tugas Menggambar Tekstur Bulu</p>
+
+      <div class="card landscape">
+        <img src="kenjeran.jpeg" alt="kenjeran">
+        <h5 class="judul">Batas Laut</h5>
+        <p class="penjelasan">Foto ini di ambil dari dalam Klenteng Kenjeran, Kota Surabaya 2026</p>
       </div>
 
-      <div class="card">
-        <img src="foto/laut.jpeg" alt="Fotografi Landscape Alam yang di Ambil di Kenjeran">
-        <p>Fotografi Landscape Alam yang di Ambil di Kenjeran</p>
+      <div class="card landscape">
+        <img src="museumangkut.jpeg" alt="museumangkut">
+        <h5 class="judul">Sekawan</h5>
+        <p class="penjelasan">Foto ini di ambil di Museum Angkut, Kota Batu 2025</p>
       </div>
 
-      <div class="card">
-        <img src="foto/langit.jpeg" alt="Hasil Fotografi Sore Menjelang Malam Hari dari Gedung Tinggi">
-        <p>Hasil Fotografi Sore Menjelang Malam Hari dari Gedung Tinggi</p>
+      <div class="card besar">
+        <img src="dufan.jpeg" alt="dufan">
+        <h5 class="judul">Pejalan Kaki</h5>
+        <p class="penjelasan">Foto ini di ambil di area depan taman rekreasi Dufan, Kota Jakarta 2026</p>
       </div>
+
+      <div class="card sedang">
+        <img src="gdplabs.jpeg" alt="gdplabs">
+        <h5 class="judul">City View</h5>
+        <p class="penjelasan">Foto ini di ambil di kantor GDP Labs, Kota Jakarta 2026</p>
+      </div>
+
+      <div class="card besar">
+        <img src="maxxigard.jpeg" alt="maxxigard">
+        <h5 class="judul">Promosi</h5>
+        <p class="penjelasan">Foto ini di ambil sebagai bentuk promosi di parkiran Gelora Pancasila, Kota Surabaya 2026</p>
+      </div>
+
+      <div class="card kecil">
+        <img src="genting.jpeg" alt="genting">
+        <h5 class="judul">Cable Car</h5>
+        <p class="penjelasan">Foto ini di ambil dri Genting Skyway, Malaysia 2025</p>
+      </div>
+
+      <div class="card sedang">
+        <img src="goci.jpeg" alt="goci">
+        <h5 class="judul">Basketball</h5>
+        <p class="penjelasan">Foto ini di ambil saat pertandingan SCL di Golden City Mall, Kota Surabaya 2025</p>
+      </div>
+
+      <div class="card besar">
+        <img src="lagoon.jpeg" alt="lagoon">
+        <h5 class="judul">Narayana</h5>
+        <p class="penjelasan">Foto produk di ambil di properti tanaman Lagoon Avenue Mall, Kota Surabaya 2025</p>
+      </div>
+
+      <div class="card kecil">
+        <img src="tunjungan.jpeg" alt="tunjungan">
+        <h5 class="judul">Car</h5>
+        <p class="penjelasan">Foto ini di ambil pada saat event IAM di Tunjungan Plaza, Kota Surabaya 2026</p>
+      </div>
+
+      <div class="card sedang">
+        <img src="vittorio.jpeg" alt="vittorio">
+        <h5 class="judul">Sunset</h5>
+        <p class="penjelasan">Foto ini diambil dari kolam rena apartemen Vittorio, Kota Surabaya 2025</p>
+      </div>
+
     </div>
   </main>
 
   <footer>
-    <p>&copy; patricia gabrielle 225170713</p>
+    <p>&copy; Patricia Gabrielle 225170713</p>
   </footer>
 
 </body>
